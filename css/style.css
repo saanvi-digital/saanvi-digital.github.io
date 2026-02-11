@@ -17,14 +17,15 @@ body {
   margin: auto;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header {
   position: fixed;
   width: 100%;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.85);
   backdrop-filter: blur(15px);
   z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .nav-container {
@@ -40,19 +41,19 @@ body {
   gap: 10px;
 }
 
-/* 🔥 Logo Size Increased */
 .logo img {
-  height: 52px;   /* Increased from 38px */
+  height: 52px;
   width: auto;
 }
 
-/* 🔥 Logo Text Color Matched */
 .logo span {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 1px;
-  color: #2F2C8F;   /* Matching logo purple */
+  color: #2F2C8F;
 }
+
+/* NAV MENU */
 
 nav {
   display: flex;
@@ -65,12 +66,32 @@ nav a {
   font-weight: 500;
   font-size: 14px;
   position: relative;
+  padding: 5px 0;
+  transition: 0.3s ease;
+}
+
+/* Purple animated underline */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(135deg, #2F2C8F, #8A79E9);
   transition: 0.3s ease;
 }
 
 nav a:hover {
   color: #2F2C8F;
+  transform: translateY(-3px);
 }
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
 
 .cta-nav {
   background: linear-gradient(135deg, #2F2C8F, #8A79E9);
@@ -79,9 +100,15 @@ nav a:hover {
   border-radius: 25px;
   text-decoration: none;
   font-size: 14px;
+  transition: 0.3s ease;
 }
 
-/* HERO */
+.cta-nav:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(47,44,143,0.25);
+}
+
+/* ================= HERO ================= */
 
 .hero {
   height: 100vh;
@@ -106,10 +133,22 @@ nav a:hover {
   background: rgba(255,255,255,0.6);
 }
 
+/* HERO ENTRY ANIMATION */
+
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero h1 {
@@ -131,7 +170,10 @@ nav a:hover {
   margin-bottom: 40px;
 }
 
-..btn-primary {
+/* HERO BUTTONS */
+
+.btn-primary {
+  display: inline-block;
   background: linear-gradient(135deg, #2F2C8F, #8A79E9);
   color: white;
   padding: 14px 26px;
@@ -146,7 +188,8 @@ nav a:hover {
   box-shadow: 0 12px 30px rgba(47,44,143,0.3);
 }
 
-..btn-secondary {
+.btn-secondary {
+  display: inline-block;
   border: 1px solid #2F2C8F;
   padding: 14px 26px;
   border-radius: 30px;
@@ -160,6 +203,8 @@ nav a:hover {
   color: white;
 }
 
+/* GLASS TAG */
+
 .glass-card {
   display: inline-block;
   padding: 15px 30px;
@@ -169,35 +214,6 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* MOBILE RESPONSIVE */
-
-@media (max-width: 768px) {
-
-  nav {
-    display: none;
-  }
-
-  .cta-nav {
-    display: none;
-  }
-
-  .logo img {
-    height: 44px;  /* Slightly smaller for mobile */
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
 /* ================= SERVICES ================= */
 
 .services {
@@ -233,11 +249,12 @@ nav a:hover {
   padding: 45px 35px;
   border-radius: 22px;
   box-shadow: 0 25px 70px rgba(0,0,0,0.05);
-  transition: 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
 }
 
+/* Purple animated top line */
 .service-card::before {
   content: "";
   position: absolute;
@@ -252,39 +269,46 @@ nav a:hover {
 }
 
 .service-card:hover {
-  transform: translateY(-14px);
-  box-shadow: 0 35px 90px rgba(47,44,143,0.15);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 35px 100px rgba(47,44,143,0.2);
 }
 
 .service-card:hover::before {
   transform: scaleX(1);
 }
 
-/* Hover Effect */
-
-.service-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 80px rgba(47,44,143,0.15);
-}
-
-/* Responsive */
+/* ================= MOBILE ================= */
 
 @media (max-width: 992px) {
   .services-grid {
     grid-template-columns: 1fr;
   }
-/* HERO ENTRY ANIMATION */
-
-.hero-content {
-  animation: fadeUp 1.2s ease forwards;
-  opacity: 0;
-  transform: translateY(40px);
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@media (max-width: 768px) {
+
+  nav {
+    display: none;
+  }
+
+  .cta-nav {
+    display: none;
+  }
+
+  .logo img {
+    height: 44px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
   }
 }
-
