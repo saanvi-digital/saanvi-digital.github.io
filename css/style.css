@@ -353,56 +353,67 @@ nav a:hover::after {
 
 .contact {
   padding: 120px 0;
-  background: #f8f9ff;
+  background: #ffffff;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  margin-top: 60px;
+  align-items: center;
 }
 
-.contact-info h3 {
+.contact-left h2 {
+  font-size: 34px;
   margin-bottom: 20px;
   color: #2F2C8F;
 }
 
-.contact-info p {
-  margin-bottom: 12px;
-  font-size: 14px;
+.contact-left p {
+  margin-bottom: 15px;
   color: #555;
 }
 
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.contact-info p {
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 14px;
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-right input,
+.contact-right select,
+.contact-right textarea {
+  padding: 16px;
   border-radius: 12px;
   border: 1px solid #ddd;
-  font-family: inherit;
   font-size: 14px;
+  font-family: 'Poppins', sans-serif;
   transition: 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contact-right input:focus,
+.contact-right select:focus,
+.contact-right textarea:focus {
   border-color: #2F2C8F;
   outline: none;
   box-shadow: 0 0 0 3px rgba(47,44,143,0.1);
 }
 
-.contact-form button {
-  border: none;
-  cursor: pointer;
+.full-btn {
+  width: 100%;
+  text-align: center;
 }
 
-/* Responsive */
+#form-status {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
 
 @media (max-width: 992px) {
   .contact-grid {
