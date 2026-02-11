@@ -107,6 +107,98 @@
 
   <!-- ================= SCRIPT ================= -->
   <script src="js/script.js"></script>
+  <!-- ================= PRICING ================= -->
+<section class="pricing" id="pricing">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Pricing Structure</h2>
+      <p>Flexible pricing built for serious brands.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Single Page -->
+      <div class="pricing-card">
+        <h3>Single Page Website</h3>
+        <h4>₹11,999</h4>
+        <ul>
+          <li>1 High-Converting Landing Page</li>
+          <li>Mobile Responsive Design</li>
+          <li>Basic SEO Setup</li>
+          <li>WhatsApp Integration</li>
+          <li>Delivery in 5 Days</li>
+        </ul>
+
+        <a href="https://wa.me/919699907771" target="_blank" class="btn-secondary">
+          Get Started
+        </a>
+
+        <button class="details-btn" onclick="openModal('single')">
+          View Full Details
+        </button>
+      </div>
+
+      <!-- Multi Page -->
+      <div class="pricing-card featured">
+        <h3>Multi Page Website</h3>
+        <h4>₹18,999</h4>
+        <p style="margin-bottom:15px;">Includes up to 3 Pages</p>
+        <ul>
+          <li>Home, About, Contact</li>
+          <li>Mobile Responsive</li>
+          <li>Speed Optimization</li>
+          <li>Basic SEO Setup</li>
+          <li>₹3,000 per Additional Page</li>
+        </ul>
+
+        <a href="https://wa.me/919699907771" target="_blank" class="btn-primary">
+          Start Project
+        </a>
+
+        <button class="details-btn" onclick="openModal('multi')">
+          View Full Details
+        </button>
+      </div>
+
+      <!-- Premium -->
+      <div class="pricing-card">
+        <h3>Premium Custom Website</h3>
+        <h4>₹39,999+</h4>
+        <ul>
+          <li>Up to 6 Pages</li>
+          <li>Advanced Animations</li>
+          <li>Hero Background Video</li>
+          <li>Conversion Focused Layout</li>
+          <li>Priority Support</li>
+          <li>₹4,500 per Additional Page</li>
+        </ul>
+
+        <a href="https://wa.me/919699907771" target="_blank" class="btn-secondary">
+          Contact Us
+        </a>
+
+        <button class="details-btn" onclick="openModal('premium')">
+          View Full Details
+        </button>
+      </div>
+
+    </div>
+
+    <div style="margin-top:50px; text-align:center; font-size:14px; color:#555;">
+      Large-scale business websites & custom systems start from ₹60,000 depending on scope.
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PRICING MODAL ================= -->
+<div class="modal" id="pricingModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
 </body>
 </html>
