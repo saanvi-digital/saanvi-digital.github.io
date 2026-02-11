@@ -43,7 +43,6 @@ body {
 
 .logo img {
   height: 52px;
-  width: auto;
 }
 
 .logo span {
@@ -53,7 +52,7 @@ body {
   color: #2F2C8F;
 }
 
-/* NAV MENU */
+/* NAV */
 
 nav {
   display: flex;
@@ -70,7 +69,6 @@ nav a {
   transition: 0.3s ease;
 }
 
-/* Purple animated underline */
 nav a::after {
   content: "";
   position: absolute;
@@ -91,7 +89,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* CTA Button */
+/* CTA */
 
 .cta-nav {
   background: linear-gradient(135deg, #2F2C8F, #8A79E9);
@@ -133,8 +131,6 @@ nav a:hover::after {
   background: rgba(255,255,255,0.6);
 }
 
-/* HERO ENTRY ANIMATION */
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -153,8 +149,6 @@ nav a:hover::after {
 
 .hero h1 {
   font-size: 44px;
-  font-weight: 700;
-  line-height: 1.2;
   margin-bottom: 20px;
 }
 
@@ -163,24 +157,21 @@ nav a:hover::after {
   margin-bottom: 30px;
 }
 
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 40px;
-}
+/* BUTTONS */
 
-/* HERO BUTTONS */
-
-.btn-primary {
+.btn-primary,
+.btn-secondary {
   display: inline-block;
-  background: linear-gradient(135deg, #2F2C8F, #8A79E9);
-  color: white;
   padding: 14px 26px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2F2C8F, #8A79E9);
+  color: white;
 }
 
 .btn-primary:hover {
@@ -189,29 +180,13 @@ nav a:hover::after {
 }
 
 .btn-secondary {
-  display: inline-block;
   border: 1px solid #2F2C8F;
-  padding: 14px 26px;
-  border-radius: 30px;
-  text-decoration: none;
   color: #2F2C8F;
-  transition: 0.3s ease;
 }
 
 .btn-secondary:hover {
   background: #2F2C8F;
   color: white;
-}
-
-/* GLASS TAG */
-
-.glass-card {
-  display: inline-block;
-  padding: 15px 30px;
-  background: rgba(255,255,255,0.4);
-  backdrop-filter: blur(15px);
-  border-radius: 30px;
-  font-weight: 600;
 }
 
 /* ================= SERVICES ================= */
@@ -228,14 +203,8 @@ nav a:hover::after {
 
 .section-header h2 {
   font-size: 36px;
-  font-weight: 700;
   margin-bottom: 15px;
   color: #2F2C8F;
-}
-
-.section-header p {
-  font-size: 16px;
-  color: #555;
 }
 
 .services-grid {
@@ -249,160 +218,95 @@ nav a:hover::after {
   padding: 45px 35px;
   border-radius: 22px;
   box-shadow: 0 25px 70px rgba(0,0,0,0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Purple animated top line */
-.service-card::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  top: 0;
-  left: 0;
-  background: linear-gradient(135deg, #2F2C8F, #8A79E9);
-  transform: scaleX(0);
-  transform-origin: left;
   transition: 0.4s ease;
+  position: relative;
 }
 
 .service-card:hover {
-  transform: translateY(-15px) scale(1.02);
+  transform: translateY(-15px);
   box-shadow: 0 35px 100px rgba(47,44,143,0.2);
 }
 
-.service-card:hover::before {
-  transform: scaleX(1);
+/* ================= PRICING ================= */
+
+.pricing {
+  padding: 120px 0;
+  background: #ffffff;
 }
 
-/* ================= MOBILE ================= */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.pricing-card {
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 24px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.05);
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 35px 90px rgba(47,44,143,0.15);
+}
+
+.pricing-card h4 {
+  font-size: 28px;
+  color: #2F2C8F;
+  margin-bottom: 20px;
+}
+
+.featured {
+  border: 2px solid #2F2C8F;
+  transform: scale(1.05);
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
-  .services-grid {
+  .services-grid,
+  .pricing-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 768px) {
-
-  nav {
-    display: none;
+  .featured {
+    transform: scale(1);
   }
-
-  .cta-nav {
-    display: none;
-  }
-
-  .logo img {
-    height: 44px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-  /* MODAL */
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 40px;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 20px;
-  position: relative;
-  animation: fadeIn 0.3s ease;
-}
-
-.close-btn {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.details-btn {
-  margin-top: 15px;
-  background: none;
-  border: none;
-  color: #2F2C8F;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-/* MODAL */
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: white;
-  padding: 40px;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 20px;
-  position: relative;
-  animation: fadeIn 0.3s ease;
-}
-
-.close-btn {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.details-btn {
-  margin-top: 15px;
-  background: none;
-  border: none;
-  color: #2F2C8F;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
 }
