@@ -310,3 +310,43 @@ nav a:hover::after {
     transform: scale(1);
   }
 }
+/* ================= TRUST STRIP ================= */
+
+.trust-strip {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2F2C8F, #8A79E9);
+  color: white;
+}
+
+.trust-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.trust-item h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.trust-item p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .trust-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .trust-container {
+    grid-template-columns: 1fr;
+  }
+}
+
