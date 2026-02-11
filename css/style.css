@@ -40,18 +40,14 @@ body {
   gap: 10px;
 }
 
-/* 🔥 Logo Size Increased */
 .logo img {
-  height: 52px;   /* Increased from 38px */
-  width: auto;
+  height: 38px;
 }
 
-/* 🔥 Logo Text Color Matched */
 .logo span {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 1px;
-  color: #2F2C8F;   /* Matching logo purple */
 }
 
 nav {
@@ -161,10 +157,6 @@ nav a {
 
   .cta-nav {
     display: none;
-  }
-
-  .logo img {
-    height: 44px;  /* Slightly smaller for mobile */
   }
 
   .hero h1 {
