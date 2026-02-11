@@ -211,23 +211,35 @@ nav a {
 }
 
 .service-card {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+  background: #ffffff;
+  padding: 45px 35px;
+  border-radius: 22px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.05);
+  transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #2F2C8F, #8A79E9);
+  transform: scaleX(0);
+  transform-origin: left;
   transition: 0.4s ease;
 }
 
-.service-card h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #2F2C8F;
+.service-card:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 35px 90px rgba(47,44,143,0.15);
 }
 
-.service-card p {
-  font-size: 15px;
-  color: #555;
-  line-height: 1.6;
+.service-card:hover::before {
+  transform: scaleX(1);
 }
 
 /* Hover Effect */
