@@ -349,4 +349,64 @@ nav a:hover::after {
     grid-template-columns: 1fr;
   }
 }
+/* ================= CONTACT ================= */
+
+.contact {
+  padding: 120px 0;
+  background: #f8f9ff;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.contact-info h3 {
+  margin-bottom: 20px;
+  color: #2F2C8F;
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2F2C8F;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47,44,143,0.1);
+}
+
+.contact-form button {
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
