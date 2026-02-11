@@ -180,3 +180,67 @@ nav a {
     gap: 15px;
   }
 }
+/* ================= SERVICES ================= */
+
+.services {
+  padding: 120px 0;
+  background: #f8f9ff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #2F2C8F;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #555;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+  transition: 0.4s ease;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #2F2C8F;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Hover Effect */
+
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 80px rgba(47,44,143,0.15);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
