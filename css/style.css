@@ -17,15 +17,14 @@ body {
   margin: auto;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 .header {
   position: fixed;
   width: 100%;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(15px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .nav-container {
@@ -35,27 +34,25 @@ body {
   padding: 18px 0;
 }
 
-/* LOGO */
-
 .logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
+/* 🔥 Logo Size Increased */
 .logo img {
-  height: 52px;   /* Increased for visibility */
+  height: 52px;   /* Increased from 38px */
   width: auto;
-  display: block;
 }
 
+/* 🔥 Logo Text Color Matched */
 .logo span {
   font-weight: 700;
   font-size: 18px;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
+  color: #2F2C8F;   /* Matching logo purple */
 }
-
-/* NAVIGATION */
 
 nav {
   display: flex;
@@ -67,42 +64,18 @@ nav a {
   color: #1C1C1C;
   font-weight: 500;
   font-size: 14px;
-  position: relative;
-  transition: 0.3s ease;
-}
-
-/* Framer-style underline animation */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(135deg, #2F2C8F, #8A79E9);
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
 }
 
 .cta-nav {
   background: linear-gradient(135deg, #2F2C8F, #8A79E9);
   color: white;
-  padding: 10px 20px;
+  padding: 10px 18px;
   border-radius: 25px;
   text-decoration: none;
   font-size: 14px;
-  transition: 0.3s ease;
 }
 
-.cta-nav:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(47,44,143,0.25);
-}
-
-/* ================= HERO ================= */
+/* HERO */
 
 .hero {
   height: 100vh;
@@ -111,7 +84,6 @@ nav a:hover::after {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 100px;
 }
 
 .hero-video {
@@ -119,34 +91,23 @@ nav a:hover::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: contrast(105%) brightness(95%);
 }
 
 .hero-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.35); /* Reduced so video visible */
+  background: rgba(255,255,255,0.6);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 800px;
-  animation: fadeUp 1.2s ease forwards;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .hero h1 {
-  font-size: 46px;
+  font-size: 44px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -155,7 +116,6 @@ nav a:hover::after {
 .hero p {
   font-size: 18px;
   margin-bottom: 30px;
-  color: #444;
 }
 
 .hero-buttons {
@@ -168,50 +128,30 @@ nav a:hover::after {
 .btn-primary {
   background: linear-gradient(135deg, #2F2C8F, #8A79E9);
   color: white;
-  padding: 14px 28px;
+  padding: 14px 26px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(47,44,143,0.3);
 }
 
 .btn-secondary {
   border: 1px solid #2F2C8F;
-  padding: 14px 28px;
+  padding: 14px 26px;
   border-radius: 30px;
   text-decoration: none;
   color: #2F2C8F;
-  transition: 0.3s ease;
 }
-
-.btn-secondary:hover {
-  background: #2F2C8F;
-  color: white;
-}
-
-/* Glass Badge */
 
 .glass-card {
   display: inline-block;
-  padding: 16px 36px;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(20px);
-  border-radius: 40px;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
   font-weight: 600;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
 }
 
-.glass-card:hover {
-  transform: translateY(-5px);
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE RESPONSIVE */
 
 @media (max-width: 768px) {
 
@@ -224,11 +164,7 @@ nav a:hover::after {
   }
 
   .logo img {
-    height: 44px;
-  }
-
-  .hero {
-    padding-top: 120px;
+    height: 44px;  /* Slightly smaller for mobile */
   }
 
   .hero h1 {
