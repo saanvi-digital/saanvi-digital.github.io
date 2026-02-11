@@ -1,3 +1,40 @@
+/* =========================
+   CONTACT FORM (FORMSPREE)
+========================= */
+
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+
+if (form) {
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch("https://formspree.io/f/mjgegllr", {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      status.innerHTML = "✅ Thank you! We’ll contact you shortly.";
+      status.style.color = "#2F2C8F";
+      form.reset();
+    } else {
+      status.innerHTML = "❌ Something went wrong. Please try again.";
+      status.style.color = "red";
+    }
+  });
+}
+
+
+/* =========================
+   PRICING MODAL
+========================= */
+
 function openModal(type) {
   const modal = document.getElementById("pricingModal");
   const body = document.getElementById("modalBody");
@@ -53,3 +90,15 @@ function openModal(type) {
 function closeModal() {
   document.getElementById("pricingModal").style.display = "none";
 }
+
+
+/* =========================
+   CLOSE MODAL ON OUTSIDE CLICK
+========================= */
+
+window.onclick = function(event) {
+  const modal = document.getElementById("pricingModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
