@@ -229,8 +229,8 @@ nav a:hover::after {
 
 /* ================= PRICING ================= */
 
-.pricing {
-  padding: 120px 0;
+..pricing {
+  padding: 120px 0 150px 0;
   background: #ffffff;
 }
 
