@@ -546,40 +546,31 @@ html, body {
 .footer-bottom {
   padding-bottom: 0px;
 }
-/* ================= MOBILE MENU ================= */
 
-.menu-toggle {
+  /* ================= MOBILE NAV SYSTEM ================= */
+
+.hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  cursor: pointer;
 }
 
-.menu-toggle span {
+.hamburger span {
   width: 25px;
   height: 3px;
   background: #2F2C8F;
   border-radius: 2px;
-  transition: 0.3s ease;
 }
-
-/* Mobile Layout Fix */
-
-@media (max-width: 768px) {
-
-  .nav-container {
-    padding: 14px 0;
-  }
-
-  /* ===== MOBILE NAV ===== */
 
 .mobile-nav {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 100%;
+  width: 75%;
   height: 100vh;
-  background: white;
+  background: #ffffff;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -589,66 +580,30 @@ html, body {
   z-index: 1500;
 }
 
+.mobile-nav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #1C1C1C;
+  font-weight: 500;
+}
+
 .mobile-nav.active {
   right: 0;
 }
 
-  .menu-toggle {
-    display: flex;
-  }
-
-  .cta-nav {
+/* Hide Desktop Nav on Mobile */
+@media (max-width: 992px) {
+  .desktop-nav,
+  .desktop-cta {
     display: none;
   }
 
-  /* HERO MOBILE ALIGNMENT */
-
-  .hero {
-    padding: 120px 20px 80px 20px;
-    height: auto;
+  .hamburger {
+    display: flex;
   }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .glass-card {
-    margin-top: 25px;
-  }
-
-  /* Sections spacing fix */
-
-  .services,
-  .pricing,
-  .contact {
-    padding: 80px 20px;
-  }
-
-}
-/* ===== MOBILE FULL WIDTH FIX ===== */
-@media (max-width: 768px) {
 
   .container {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 92%;
   }
-
-  .trust-strip,
-  .footer,
-  .contact,
-  .pricing,
-  .services {
-    overflow-x: hidden;
-  }
-
 }
+
