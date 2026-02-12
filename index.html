@@ -31,24 +31,33 @@
       <span>SAANVI DIGITAL</span>
     </div>
 
-    <!-- Hamburger Icon -->
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <nav id="mobileNav">
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
       <a href="#">Home</a>
       <a href="#services">Services</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <a href="https://wa.me/919699907771" class="cta-nav" target="_blank">
+    <a href="https://wa.me/919699907771" class="cta-nav desktop-cta" target="_blank">
       Start Project
     </a>
 
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#" onclick="closeMenu()">Home</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#pricing" onclick="closeMenu()">Pricing</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
   </div>
 </header>
 
