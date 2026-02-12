@@ -104,9 +104,12 @@ window.onclick = function(event) {
 };
 function toggleMenu() {
   document.getElementById("mobileNav").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
 }
 
 function closeMenu() {
   document.getElementById("mobileNav").classList.remove("active");
+  document.getElementById("overlay").classList.remove("active");
 }
+
 
