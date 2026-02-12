@@ -571,28 +571,27 @@ html, body {
     padding: 14px 0;
   }
 
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 70%;
-    background: #ffffff;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    transition: 0.4s ease;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-  }
+  /* ===== MOBILE NAV ===== */
 
-  nav a {
-    font-size: 18px;
-  }
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  transition: 0.4s ease;
+  z-index: 1500;
+}
 
-  nav.active {
-    right: 0;
-  }
+.mobile-nav.active {
+  right: 0;
+}
 
   .menu-toggle {
     display: flex;
@@ -632,6 +631,24 @@ html, body {
   .pricing,
   .contact {
     padding: 80px 20px;
+  }
+
+}
+/* ===== MOBILE FULL WIDTH FIX ===== */
+@media (max-width: 768px) {
+
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .trust-strip,
+  .footer,
+  .contact,
+  .pricing,
+  .services {
+    overflow-x: hidden;
   }
 
 }
