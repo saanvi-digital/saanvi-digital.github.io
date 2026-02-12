@@ -547,22 +547,31 @@ html, body {
   padding-bottom: 0px;
 }
 
-  /* ================= MOBILE NAV SYSTEM ================= */
+  /* ================= MOBILE NAV ================= */
 
 .hamburger {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  font-size: 26px;
   cursor: pointer;
+  color: #2F2C8F;
 }
 
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #2F2C8F;
-  border-radius: 2px;
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 998;
 }
 
+/* Mobile Menu Panel */
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -570,20 +579,20 @@ html, body {
   width: 75%;
   height: 100vh;
   background: #ffffff;
-  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
+  padding-top: 100px;
+  padding-left: 40px;
   transition: 0.4s ease;
-  z-index: 1500;
+  z-index: 999;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
 }
 
 .mobile-nav a {
   text-decoration: none;
   font-size: 20px;
-  color: #1C1C1C;
+  margin-bottom: 30px;
+  color: #1a1a1a;
   font-weight: 500;
 }
 
@@ -591,19 +600,42 @@ html, body {
   right: 0;
 }
 
-/* Hide Desktop Nav on Mobile */
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Desktop Hide */
+@media (min-width: 993px) {
+  .mobile-nav,
+  .overlay {
+    display: none;
+  }
+}
+
+/* Mobile View */
 @media (max-width: 992px) {
-  .desktop-nav,
-  .desktop-cta {
+
+  nav {
+    display: none;
+  }
+
+  .cta-nav {
     display: none;
   }
 
   .hamburger {
-    display: flex;
+    display: block;
   }
 
   .container {
-    width: 92%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 }
+
 
