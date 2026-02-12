@@ -282,15 +282,25 @@ nav a:hover::after {
   border: 2px solid #2F2C8F;
   transform: scale(1.05);
 }
-/* Pricing Note Visibility */
+
+/* ===== FIX PRICING & TRUST GAP ===== */
+
+.pricing {
+  padding-bottom: 120px !important;
+}
 
 .pricing-note {
-  margin-top: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   text-align: center;
   font-size: 15px;
   color: #2F2C8F;
   font-weight: 500;
-  opacity: 0.85;
+  opacity: 0.9;
+}
+
+.trust-strip {
+  margin-top: 0;
 }
 
 /* ================= MODAL ================= */
