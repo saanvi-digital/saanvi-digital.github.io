@@ -12,7 +12,7 @@ body {
   background: #ffffff;
   color: #1C1C1C;
 }
-@media (max-width: 700px) {
+@media (max-width: auto) {
   .container {
     width: 100%;
     padding: 0 20px;
