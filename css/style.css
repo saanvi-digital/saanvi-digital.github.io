@@ -121,16 +121,16 @@ nav a:hover::after {
   position: absolute;
   top: 0;
   left: 0;
-  width: 115%;
-  height: 115%;
+  width: 120%;
+  height: 120%;
   object-fit: cover;
-  transform: translate(-7%, -7%);
+  transform: translate(-10%, -10%);
 }
 
 .hero-overlay {
   position: absolute;
-  width: 115%;
-  height: 115%;
+  width: 120%;
+  height: 120%;
   background: linear-gradient(to bottom, rgba(255,255,255,0.55), rgba(255,255,255,0.65));
 }
 
