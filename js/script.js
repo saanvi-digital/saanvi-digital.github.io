@@ -103,12 +103,10 @@ window.onclick = function(event) {
   }
 };
 function toggleMenu() {
-  const nav = document.getElementById("mobileNav");
-  nav.classList.toggle("active");
+  document.getElementById("mobileNav").classList.toggle("active");
 }
-// Close menu when link clicked
-document.querySelectorAll("#mobileNav a").forEach(link => {
-  link.addEventListener("click", () => {
-    document.getElementById("mobileNav").classList.remove("active");
-  });
-});
+
+function closeMenu() {
+  document.getElementById("mobileNav").classList.remove("active");
+}
+
