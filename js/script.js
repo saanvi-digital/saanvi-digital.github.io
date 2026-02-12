@@ -102,3 +102,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
+function toggleMenu() {
+  const nav = document.getElementById("mobileNav");
+  nav.classList.toggle("active");
+}
