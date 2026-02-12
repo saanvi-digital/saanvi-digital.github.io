@@ -1,3 +1,6 @@
+html {
+  overflow-x: hidden;
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +11,13 @@
 body {
   background: #ffffff;
   color: #1C1C1C;
-  overflow-x: hidden;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
 }
 
 /* ================= HEADER ================= */
