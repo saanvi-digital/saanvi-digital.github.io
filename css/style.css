@@ -339,3 +339,63 @@ nav a:hover::after {
   font-size: 13px;
   color: rgba(255,255,255,0.5);
 }
+/* ================= FIX CONTACT LAYOUT ================= */
+
+.contact {
+  padding: 120px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.contact-right input,
+.contact-right select,
+.contact-right textarea {
+  width: 100%;
+}
+
+/* ================= FIX FOOTER GRID ================= */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.footer-col a {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Remove extra white gap under footer */
+
+body {
+  margin: 0;
+}
+
+.footer {
+  margin-bottom: 0;
+}
+
+/* ================= RESPONSIVE FIX ================= */
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
