@@ -178,33 +178,110 @@ section { padding: 80px 0; }
 .footer-col a:hover { color: #8A79E9; }
 .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 13px; color: rgba(255,255,255,0.5); }
 
-/* ================= MODAL & MOBILE NAV ================= */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; left: 0; top: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6); z-index: 2000;
-  justify-content: center; align-items: center;
+/* ================= PREMIUM HAMBURGER (ANIMATED) ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1002; /* Overlay se upar */
+  transition: all 0.3s ease;
+  padding: 5px;
 }
-.modal-content { background: #fff; padding: 40px; border-radius: 20px; width: 90%; max-width: 500px; position: relative; animation: fadeUp 0.3s ease; }
-.close-btn { position: absolute; right: 20px; top: 15px; font-size: 24px; cursor: pointer; }
 
-/* Hamburger & Mobile Menu */
-.hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
-.hamburger span { width: 28px; height: 3px; background: #2F2C8F; border-radius: 3px; }
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: #2F2C8F;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+/* Animation State (Jab Menu Open Ho) */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+  background: #E91E63; /* Premium Red/Pink highlight */
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* Middle line gayab */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+  background: #E91E63;
+}
 
 @media (max-width: 992px) {
-  .desktop-nav, .cta-nav { display: none; }
   .hamburger { display: flex; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .pricing-card.featured { transform: scale(1); margin: 20px 0; }
-  
-  .mobile-nav {
-    position: fixed; top: 0; right: -100%; width: 75%; height: 100vh;
-    background: #fff; z-index: 1001; transition: 0.4s ease;
-    padding: 100px 30px; display: flex; flex-direction: column; gap: 25px;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+
+/* ================= FIX: MOBILE MODAL POPUP ================= */
+.modal {
+  display: none; /* Default Hidden */
+  position: fixed; /* Screen par chipka rahega */
+  inset: 0; /* Top, Left, Right, Bottom = 0 */
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Thoda dark background focus ke liye */
+  backdrop-filter: blur(8px); /* Premium Glass Effect behind popup */
+  z-index: 99999 !important; /* Sabse upar */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Mobile par side se gap */
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  animation: popIn 0.3s ease forwards;
+}
+
+/* Animation for Popup */
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  background: #f0f0f0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* Mobile Specific Fixes */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 25px 20px;
+    width: 90%; /* Mobile par width control */
   }
-  .mobile-nav a { text-decoration: none; font-size: 20px; color: #1C1C1C; font-weight: 600; }
-  .mobile-nav.active { right: 0; }
-  .overlay.active { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; }
+  
+  .modal-content h2 { font-size: 22px; }
+  .modal-content h4 { font-size: 24px; }
+  
+  /* Footer overlap issue fix */
+  .footer { z-index: 1; } 
 }
