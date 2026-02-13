@@ -22,15 +22,17 @@
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header class="header">
+ <!-- ================= HEADER ================= -->
+<header class="header">
   <div class="container nav-container">
 
+    <!-- Logo -->
     <div class="logo">
       <img src="logo-icon.png" alt="Saanvi Digital">
       <span>SAANVI DIGITAL</span>
     </div>
 
+    <!-- Desktop Navigation -->
     <nav class="desktop-nav">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
@@ -38,10 +40,12 @@
       <a href="#contact">Contact</a>
     </nav>
 
+    <!-- CTA Button -->
     <a href="https://wa.me/919699907771" class="cta-nav" target="_blank">
       Start Project
     </a>
 
+    <!-- Hamburger (Mobile Only) -->
     <div class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
@@ -49,18 +53,18 @@
     </div>
 
   </div>
-
-  <!-- Mobile Nav -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#services" onclick="closeMenu()">Services</a>
-    <a href="#pricing" onclick="closeMenu()">Pricing</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-  </div>
-
-  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
 </header>
+
+<!-- Mobile Slide Menu -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+  
   <!-- ================= HERO ================= -->
   <section class="hero">
 
