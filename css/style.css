@@ -4,7 +4,6 @@ html {
 
 * {
   margin: 0;
-  padding: 120px 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -13,14 +12,6 @@ body {
   background: #ffffff;
   color: #1C1C1C;
   overflow-x: hidden;
-}
-
-/* ================= CONTAINER ================= */
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
 }
 
 /* ================= HEADER CLEAN FINAL ================= */
@@ -36,7 +27,6 @@ body {
 }
 
 .nav-container {
-  padding: 120px 0;
   width: 100%;
   max-width: 1200px;
   margin: 0;
