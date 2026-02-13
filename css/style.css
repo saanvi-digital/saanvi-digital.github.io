@@ -164,7 +164,7 @@ body {
 
 .hero {
   margin-top: 90px;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -269,7 +269,7 @@ body {
 /* ================= SERVICES ================= */
 
 .services {
-  padding: 100px 0;
+  padding: 60px 0;
   background: #f8f9ff;
 }
 
