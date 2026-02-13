@@ -1,5 +1,7 @@
 html {
 }
+/* ================= RESET ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,18 +12,22 @@ html {
 body {
   background: #ffffff;
   color: #1C1C1C;
+  overflow-x: hidden;
 }
-@media (max-width: 700px) {
-  .container {
-    width: 100%;
-    padding: 0 20px;
-  }
+
+/* ================= CONTAINER ================= */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
+
 /* ================= HEADER ================= */
 
 .header {
   width: 100%;
-  background: #fff;
+  background: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
@@ -33,15 +39,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 75px;
 }
+
+/* Logo */
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  font-size: 18px;
   color: #2F2C8F;
 }
 
@@ -49,7 +56,7 @@ body {
   height: 40px;
 }
 
-/* Desktop Nav */
+/* Desktop Navigation */
 
 .desktop-nav {
   display: flex;
@@ -78,13 +85,13 @@ body {
   width: 100%;
 }
 
-/* CTA */
+/* CTA Button */
 
 .cta-nav {
   background: linear-gradient(135deg, #2F2C8F, #8A79E9);
   padding: 10px 22px;
   border-radius: 25px;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   font-size: 14px;
 }
@@ -94,7 +101,7 @@ body {
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   cursor: pointer;
 }
 
@@ -102,34 +109,36 @@ body {
   width: 25px;
   height: 3px;
   background: #2F2C8F;
+  border-radius: 3px;
 }
 
-/* Mobile Nav */
+/* ================= MOBILE NAV ================= */
 
 .mobile-nav {
   position: fixed;
-  right: -100%;
   top: 0;
-  width: 250px;
+  right: -100%;
+  width: 75%;
   height: 100vh;
-  background: #fff;
+  background: #ffffff;
+  padding-top: 100px;
+  padding-left: 30px;
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
   gap: 30px;
-  padding-left: 30px;
-  transition: 0.3s ease;
+  transition: 0.4s ease;
   z-index: 1001;
-}
-
-.mobile-nav.active {
-  right: 0;
 }
 
 .mobile-nav a {
   text-decoration: none;
   font-size: 18px;
   color: #1C1C1C;
+  font-weight: 500;
+}
+
+.mobile-nav.active {
+  right: 0;
 }
 
 /* Overlay */
@@ -137,18 +146,22 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.3);
-  display: none;
-  z-index: 999;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 1000;
 }
 
 .overlay.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
+
   .desktop-nav,
   .cta-nav {
     display: none;
@@ -157,7 +170,9 @@ body {
   .hamburger {
     display: flex;
   }
+
 }
+
 /* ================= HERO ================= */
 
 .hero {
@@ -599,95 +614,5 @@ html, body {
   padding-bottom: 0px;
 }
 
-  /* ================= MOBILE NAV ================= */
-
-.hamburger {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: #2F2C8F;
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
-  z-index: 998;
-}
-
-/* Mobile Menu Panel */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 75%;
-  height: 100vh;
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  padding-top: 100px;
-  padding-left: 40px;
-  transition: 0.4s ease;
-  z-index: 999;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-}
-
-.mobile-nav a {
-  text-decoration: none;
-  font-size: 20px;
-  margin-bottom: 30px;
-  color: #1a1a1a;
-  font-weight: 500;
-}
-
-.mobile-nav.active {
-  right: 0;
-}
-
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Desktop Hide */
-@media (min-width: 993px) {
-  .mobile-nav,
-  .overlay {
-    display: none;
-  }
-}
-
-/* Mobile View */
-@media (max-width: 992px) {
-
-  nav {
-    display: none;
-  }
-
-  .cta-nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-}
 
 
