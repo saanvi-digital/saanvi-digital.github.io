@@ -25,6 +25,8 @@ body {
 
 /* ================= HEADER ================= */
 
+/* ================= HEADER CLEAN FINAL ================= */
+
 .header {
   width: 100%;
   background: #ffffff;
@@ -36,19 +38,22 @@ body {
 }
 
 .nav-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 75px;
 }
 
 /* Logo */
-
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 600;
+  font-size: 18px;
   color: #2F2C8F;
 }
 
@@ -56,11 +61,11 @@ body {
   height: 40px;
 }
 
-/* Desktop Navigation */
-
+/* Desktop Nav */
 .desktop-nav {
   display: flex;
   gap: 40px;
+  align-items: center;
 }
 
 .desktop-nav a {
@@ -68,6 +73,7 @@ body {
   color: #1C1C1C;
   font-weight: 500;
   position: relative;
+  padding-bottom: 6px;
 }
 
 .desktop-nav a::after {
@@ -76,7 +82,7 @@ body {
   width: 0%;
   height: 2px;
   left: 0;
-  bottom: -6px;
+  bottom: 0;
   background: #8A79E9;
   transition: 0.3s ease;
 }
@@ -85,31 +91,46 @@ body {
   width: 100%;
 }
 
-/* CTA Button */
-
+/* CTA */
 .cta-nav {
   background: linear-gradient(135deg, #2F2C8F, #8A79E9);
   padding: 10px 22px;
   border-radius: 25px;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   font-size: 14px;
 }
 
 /* Hamburger */
-
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
 }
 
 .hamburger span {
-  width: 25px;
+  width: 26px;
   height: 3px;
   background: #2F2C8F;
   border-radius: 3px;
+}
+
+/* Mobile Fix */
+@media (max-width: 992px) {
+
+  .desktop-nav,
+  .cta-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-container {
+    padding: 0 20px;
+  }
 }
 
 /* ================= MOBILE NAV ================= */
@@ -174,6 +195,9 @@ body {
 }
 
 /* ================= HERO ================= */
+.hero {
+  margin-top: 80px;
+}
 
 .hero {
   height: 100vh;
